@@ -1,0 +1,243 @@
+:root {
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-headline: Haettenschweiler, "Roboto", sans-serif;
+  /* colors */
+  --primary-color: #2a75bb;
+  --secondary-color: #ffcb05;
+  --tertiary-color: #e3350d;
+  --dark-charcoal: #2e2e2e;
+
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ************Element styles ************ */
+
+img {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--dark-charcoal);
+  padding: 0.75rem;
+}
+
+/* ************ Section styles ************ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  color: var(--dark-charcoal);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-bottom: -200px;
+}
+
+#hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.hero-text {
+  position: relative;
+  top: 20%;
+  left: 25%;
+  transform: translate(-50%, -220%);
+  max-width: 500px;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  list-style: none;
+}
+
+.logo {
+  line-height: 60px;
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 30px;
+  font-family: var(--font-headline);
+}
+
+#logo-img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--font-body);
+}
+
+/* Browser bar mock */
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #ddd;
+  border-bottom: 1px solid #bbb;
+}
+
+.nav-btn {
+  padding: 2px 6px;
+  border: 1px solid #999;
+  background: #eee;
+}
+
+.address-bar {
+  flex: 1;
+  margin-left: 10px;
+  padding: 4px 8px;
+  background: white;
+  border: 1px solid #999;
+  font-size: 0.9rem;
+}
+
+/* EV summary */
+.ev-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+}
+
+.ev-summary span {
+  font-size: 0.9rem;
+}
+
+.reset-btn {
+  padding: 4px 10px;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Stat title */
+.stat-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Pokémon grid */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* Pokémon card */
+.pokemon-card {
+  text-align: center;
+}
+
+.pokemon-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #333;
+  background:
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      #333 48%,
+      #333 52%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      #333 48%,
+      #333 52%,
+      transparent 52%
+    );
+  position: relative;
+}
+
+/* Optional star placeholder */
+.pokemon-image::after {
+  content: "★";
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 1.2rem;
+}
+
+/* Country flag */
+.country-flag {
+  border: 1px solid var(--dark-charcoal);
+  text-align: center;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  footer {
+    font-size: var(--small-font);
+    padding: 1em;
+  }
+}

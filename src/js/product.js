@@ -3,16 +3,16 @@ import ProductData from "./ProductData.mjs";
 
 const dataSource = new ProductData("tents");
 
-function addProductToCart(product) {
-  setLocalStorage("so-cart", product);
+function addProductTosaved(product) {
+  setLocalStorage("so-saved", product);
 }
-// add to cart button event handler
-async function addToCartHandler(e) {
+// add to saved button event handler
+async function addTosavedHandler(e) {
   const product = await dataSource.findProductById(e.target.dataset.id);
-  addProductToCart(product);
+  addProductTosaved(product);
 }
 
-// add listener to Add to Cart button
+// add listener to Add to saved button
 document
-  .getElementById("addToCart")
-  .addEventListener("click", addToCartHandler);
+  .getElementById("addTosaved")
+  .addEventListener("click", addTosavedHandler);
