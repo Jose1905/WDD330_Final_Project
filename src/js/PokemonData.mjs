@@ -6,7 +6,7 @@ function convertToJson(res) {
   }
 }
 
-export default class ProductData {
+export default class PokemonData {
   constructor(category) {
     this.category = category;
     this.path = `../json/${this.category}.json`;
@@ -16,8 +16,8 @@ export default class ProductData {
       .then(convertToJson)
       .then((data) => data);
   }
-  async findProductById(id) {
-    const products = await this.getData();
-    return products.find((item) => item.Id === id);
+  async findPokemonById(id) {
+    const pokemons = await this.getData();
+    return pokemons.find((pokemon) => pokemon.Id === id);
   }
 }

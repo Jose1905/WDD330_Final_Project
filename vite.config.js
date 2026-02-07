@@ -9,8 +9,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
-        saved: resolve(__dirname, "src/saved/index.html"),
+        saved: resolve(__dirname, "src/favorites/index.html"),
         pokemon: resolve(__dirname, "src/pokemon_pages/index.html"),
+        header: resolve(__dirname, "src/public/partials/header.html"),
+        footer: resolve(__dirname, "src/public/partials/footer.html"),
       },
     },
   },
