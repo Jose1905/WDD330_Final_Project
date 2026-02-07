@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon EV calculator | Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script src="../js/pokemon.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <header clas="divider" id="main-header"></header>
+
+    <main class="pokemon-container">
+      <h1 id="pokemon-name">Ditto</h1>
+
+      <img
+        id="pokemon-sprite"
+        alt="Pokemon sprite"
+        src="../public/images/ditto.png"
+      />
+
+      <button id="favorites-btn" alt="Favorites button">⭐</button>
+
+      <section id="types">
+        <h2>Types</h2>
+        <ul id="pokemon-types">
+          <li>Normal</li>
+        </ul>
+      </section>
+
+      <section id="abilities">
+        <h2>Abilities</h2>
+        <ul id="pokemon-abilities">
+          <li>Limber</li>
+          <li>Imposter (Hidden Ability)</li>
+        </ul>
+      </section>
+
+      <section id="stats">
+        <h2>Stats</h2>
+        <ul id="pokemon-stats">
+          <li>HP: 48</li>
+          <li>Attack: 48</li>
+          <li>Defense: 48</li>
+          <li>Special Attack: 48</li>
+          <li>Special Defense: 48</li>
+          <li>Speed: 48</li>
+        </ul>
+      </section>
+
+      <section id="evs">
+        <h2>EVs (from Local Storage)</h2>
+        <ul id="pokemon-evs">
+          <li>HP: 0</li>
+          <li>Attack: 0</li>
+          <li>Defense: 0</li>
+          <li>Special Attack: 0</li>
+          <li>Special Defense: 0</li>
+          <li>Speed: 0</li>
+        </ul>
+      </section>
+
+      <section id="generation">
+        <h2>Generation Introduced</h2>
+        <p id="pokemon-generation">Gen 1</p>
+      </section>
+
+      <footer clas="divider" id="footer"></footer>
+    </main>
+  </body>
+</html>
