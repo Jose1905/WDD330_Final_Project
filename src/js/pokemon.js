@@ -1,4 +1,5 @@
-import { setLocalStorage, loadHeaderFooter } from "./utils.mjs";
+/* import { setLocalStorage, loadHeaderFooter } from "./utils.mjs";*/
+import { loadHeaderFooter } from "./utils.mjs";
 /* import PokemonData from "./PokemonData.mjs"; */
 
 loadHeaderFooter();
