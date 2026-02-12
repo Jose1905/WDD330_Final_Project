@@ -1,9 +1,9 @@
-const baseURL = "https://pokeapi.co/api/v2/pokemon";
+const baseURL = "https://pokeapi.co/api/v2";
 
 // Fetches a list of all Pokémon from the PokéAPI
 export async function fetchPokemonNames() {
   try {
-    const response = await fetch(`${baseURL}?limit=2000&offset=0`);
+    const response = await fetch(`${baseURL}/pokemon?limit=2000&offset=0`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -19,7 +19,7 @@ export async function fetchPokemonNames() {
 // Fetches data for the specified Pokémon from the PokéAPI
 export async function fetchPokemonData(pokemonName) {
   try {
-    const response = await fetch(`${baseURL}/${pokemonName}`);
+    const response = await fetch(`${baseURL}/pokemon/${pokemonName}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -27,6 +27,22 @@ export async function fetchPokemonData(pokemonName) {
     return data;
   } catch (error) {
     console.error("Error fetching Pokémon data:", error);
+    throw error;
+  }
+}
+
+// Fetches a list of all Regions from the PokéAPI
+export async function fetchRegions() {
+  try {
+    const response = await fetch(`${baseURL}/region`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const regions = data.results.map(pokemon => pokemon.name);
+    return regions;
+  } catch (error) {
+    console.error("Error fetching regions:", error);
     throw error;
   }
 }

@@ -1,14 +1,14 @@
 /* import { setLocalStorage, loadHeaderFooter } from "./utils.mjs";*/
 import { loadHeaderFooter } from "./utils.mjs";
 import { fetchPokemonNames } from "./ExternalServices.mjs";
-import { PokemonDetails } from "./pokemonDetails.mjs";
+import PokemonDetails from "./pokemonDetails.mjs";
+
+loadHeaderFooter();
 
 const pokemonNames = await fetchPokemonNames();
 const pokemonDetails = new PokemonDetails(pokemonNames[0]);
-await pokemonDetails.init();
 console.log(pokemonDetails); // Example usage of PokemonDetails class with the first Pokémon name from the list
 
-loadHeaderFooter();
 
 /* const dataSource = new PokemonData("tents");
 
