@@ -32,8 +32,8 @@
         <span>HP: XXX</span>
         <span>Attack: XXX</span>
         <span>Defense: XXX</span>
-        <span>Sp. Attack: XXX</span>
-        <span>Sp. Defense: XXX</span>
+        <span>Special Attack: XXX</span>
+        <span>Special Defense: XXX</span>
         <span>Speed: XXX</span>
         <button class="reset-btn">Reset</button>
       </section>
@@ -44,11 +44,16 @@
           <!-- Options will be populated dynamically -->
         </select>
 
-        <select>
-          <option>Stat</option>
+        <select id="stat-select">
+          <option value="hp">HP</option>
+          <option value="attack">Attack</option>
+          <option value="defense">Defense</option>
+          <option value="specialAttack">Special Attack</option>
+          <option value="specialDefense">Special Defense</option>
+          <option value="speed">Speed</option>
         </select>
 
-        <button>Search!</button>
+        <button id="search-btn">Search!</button>
       </section>
 
       <!-- Stat title -->
@@ -56,30 +61,7 @@
 
       <!-- Pokémon grid -->
       <section class="pokemon-grid">
-        <div class="pokemon-card">
-          <div class="pokemon-image"></div>
-          <p>Pokémon name</p>
-        </div>
-
-        <div class="pokemon-card">
-          <div class="pokemon-image"></div>
-          <p>Pokémon name</p>
-        </div>
-
-        <div class="pokemon-card">
-          <div class="pokemon-image"></div>
-          <p>Pokémon name</p>
-        </div>
-
-        <div class="pokemon-card">
-          <div class="pokemon-image"></div>
-          <p>Pokémon name</p>
-        </div>
-
-        <div class="pokemon-card">
-          <div class="pokemon-image"></div>
-          <p>Pokémon name</p>
-        </div>
+        <!-- Pokémon cards will be populated dynamically -->
       </section>
     </main>
 

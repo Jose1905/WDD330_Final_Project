@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         /* favorites: resolve(__dirname, "src/favorites/index.html"), */
-        pokemon: resolve(__dirname, "src/pokemon/index.html"),
+        pokemon: resolve(__dirname, "src/pokemon/"),
         header: resolve(__dirname, "src/public/partials/header.html"),
         footer: resolve(__dirname, "src/public/partials/footer.html"),
       },

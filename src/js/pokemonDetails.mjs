@@ -13,22 +13,22 @@ export default class PokemonDetails {
         this.baseSpecialAttack = null;
         this.baseSpecialDefense = null;
         this.baseSpeed = null;
+        this.evsYield = null;
     }
 
     async init() {
         try {
             const data = await fetchPokemonData(this.pokemonName);
-            let abilities = data.abilities.map(ability => ability.ability.name);
-            this.abilities = abilities;
-            let types = data.types.map(type => type.type.name);
-            this.types = types;
-            this.imageUrl = data.sprites.front_default;
-            this.baseHp = data.stats.find(stat => stat.stat.name === "hp").base_stat;
-            this.baseAttack = data.stats.find(stat => stat.stat.name === "attack").base_stat;
-            this.baseDefense = data.stats.find(stat => stat.stat.name === "defense").base_stat;
-            this.baseSpecialAttack = data.stats.find(stat => stat.stat.name === "special-attack").base_stat;
-            this.baseSpecialDefense = data.stats.find(stat => stat.stat.name === "special-defense").base_stat;
-            this.baseSpeed = data.stats.find(stat => stat.stat.name === "speed").base_stat;
+            this.abilities = data.abilities;
+            this.types = data.types;
+            this.imageUrl = data.imageUrl;
+            this.baseHp = data.baseHp;
+            this.baseAttack = data.baseAttack;
+            this.baseDefense = data.baseDefense;
+            this.baseSpecialAttack = data.baseSpecialAttack;
+            this.baseSpecialDefense = data.baseSpecialDefense;
+            this.baseSpeed = data.baseSpeed;
+            this.evsYield = data.evYield;           
         } catch (error) {
             console.error("Error initializing PokemonDetails:", error);
         }

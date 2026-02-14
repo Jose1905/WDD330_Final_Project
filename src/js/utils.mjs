@@ -1,3 +1,5 @@
+import { fetchPokemonNames, fetchPokemonData } from "./ExternalServices.mjs";
+
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -42,4 +44,12 @@ export async function loadHeaderFooter() {
   const footerElement = qs("#footer");
   renderWithTemplate(footerTemplate, footerElement);
   renderWithTemplate(headerTemplate, headerElement);
+}
+
+export function loadPokemonCard(parentElement, pokemonName, pokemonImage) {
+  const cardTemplate = `<div class="pokemon-card">
+    <img src="${pokemonImage}" alt="${pokemonName}" class="pokemon-image">
+    <h3>${pokemonName}</h3>
+  </div>`;
+  parentElement.innerHTML += cardTemplate;
 }

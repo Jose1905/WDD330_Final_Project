@@ -228,21 +228,6 @@ nav ul {
   width: 100%;
   aspect-ratio: 1 / 1;
   border: 1px solid #333;
-  background:
-    linear-gradient(
-      45deg,
-      transparent 48%,
-      #333 48%,
-      #333 52%,
-      transparent 52%
-    ),
-    linear-gradient(
-      -45deg,
-      transparent 48%,
-      #333 48%,
-      #333 52%,
-      transparent 52%
-    );
   position: relative;
 }
 

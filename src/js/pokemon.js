@@ -7,8 +7,6 @@ loadHeaderFooter();
 
 const pokemonNames = await fetchPokemonNames();
 const pokemonDetails = new PokemonDetails(pokemonNames[0]);
-console.log(pokemonDetails); // Example usage of PokemonDetails class with the first Pokémon name from the list
-
 
 /* const dataSource = new PokemonData("tents");
 
