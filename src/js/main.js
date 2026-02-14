@@ -5,7 +5,6 @@ import PokemonDetails from "./pokemonDetails.mjs";
 const regionSelect = document.getElementById("region-select");
 const searchBtn = document.getElementById("search-btn");
 const statSelect = document.getElementById("stat-select");
-console.log(statSelect.value); // Log the elements to verify they are being selected correctly
 
 async function buildRegionList() {
   const regions = await fetchRegions();
@@ -35,7 +34,6 @@ async function buildPokemonList(regionUrl, stat) {
         if (!isStat(pokemonDetails, stat)) {
           return null; // Skip Pokémon that don't yield EVs in the selected stat
         } else {
-          console.log(`Adding ${pokemonDetails.pokemonName} to the grid`); // Log the Pokémon being added to the grid
           return {
             name: pokemonDetails.pokemonName,
             sprites: { front_default: pokemonDetails.imageUrl },
