@@ -3,34 +3,32 @@ import {
   loadHeaderFooter,
   loadPokemonData,
   setLocalStorage,
-  setClick,
 } from "./utils.mjs";
 
 loadHeaderFooter();
 
+const favoriteBtn = document.querySelector("#favorites-btn");
 const pokemonName = new URLSearchParams(window.location.search).get("name");
+
 if (pokemonName) {
   loadPokemonData(pokemonName);
 } else {
-  console.error("No Pokémon name specified in the URL.");
+  loadPokemonData("pikachu"); // Default to Pikachu if no name is provided
 }
+favoriteBtn.addEventListener("click", toggleFavorite);
 
-window.addEventListener("DOMContentLoaded", () => {
-  const favoriteBtn = document.querySelector("#favorites-btn");
-  setClick(favoriteBtn, toggleFavorite);
-
-  function toggleFavorite() {
-    const favorites = getLocalStorage("favorites") || [];
-    if (favorites.includes(pokemonName)) {
-      // Remove from favorites
-      const updatedFavorites = favorites.filter((name) => name !== pokemonName);
-      setLocalStorage("favorites", updatedFavorites);
-      favoriteBtn.textContent = "⭐";
-    } else {
-      // Add to favorites
-      favorites.push(pokemonName);
-      setLocalStorage("favorites", favorites);
-      favoriteBtn.textContent = "🌟";
-    }
+function toggleFavorite() {
+  console.log("Toggling favorite for:", pokemonName); // Log the Pokémon name being toggled
+  const favorites = getLocalStorage("favorites") || [];
+  if (favorites.includes(pokemonName)) {
+    // Remove from favorites
+    const updatedFavorites = favorites.filter((name) => name !== pokemonName);
+    setLocalStorage("favorites", updatedFavorites);
+    favoriteBtn.textContent = "⭐";
+  } else {
+    // Add to favorites
+    favorites.push(pokemonName);
+    setLocalStorage("favorites", favorites);
+    favoriteBtn.textContent = "🌟";
   }
-});
+}
