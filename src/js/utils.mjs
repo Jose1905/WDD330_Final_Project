@@ -46,12 +46,6 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement);
 }
 
-async function getCountryFlag() {
-  const res = await fetch("https://ipapi.co/json/");
-  const data = await res.json();
-  return data.country_code.toLowerCase();
-}
-
 export function loadPokemonCard(parentElement, pokemonName, pokemonImage) {
   const cardTemplate = `<div class="pokemon-card">
     <a href="../pokemon/index.html?name=${pokemonName.toLowerCase()}" class="pokemon-link">
@@ -65,7 +59,6 @@ export function loadPokemonCard(parentElement, pokemonName, pokemonImage) {
 export async function loadPokemonData(pokemonName) {
   const parentElement = document.querySelector(".pokemon-container");
   const pokemonData = await fetchPokemonData(pokemonName);
-  console.log("Fetched Pokémon data:", pokemonData); // Log the fetched data to verify it's correct
   const pokemonDetailsTemplate = `<h1 id="pokemon-name">${pokemonData.name}</h1>
 
       <img
@@ -73,9 +66,7 @@ export async function loadPokemonData(pokemonName) {
         src="${pokemonData.imageUrl}"
         id="pokemon-sprite"
       />
-
-      <button id="favorites-btn" alt="Favorites button">⭐</button>
-
+      
       <section id="types">
         <h2>Types</h2>
         <ul id="pokemon-types">
