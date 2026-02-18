@@ -224,6 +224,14 @@ nav ul {
   text-align: center;
 }
 
+.pokemon-card img {
+  transition: transform 250ms ease;
+}
+
+.pokemon-card img:hover {
+  transform: scale(1.1);
+}
+
 .pokemon-image {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -239,8 +247,22 @@ nav ul {
   position: absolute;
   top: 150px;
   right: 100px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
+#favorites-btn:active {
+  transform: scale(0.95);
+}
+
+#favorites-btn.favorited {
+  animation: pop 300ms ease;
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
 footer {
   font-size: var(--small-font);
   padding: 1em;
