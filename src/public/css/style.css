@@ -262,6 +262,12 @@ footer {
   margin: 1rem auto;
 }
 
+/****************** Favorites page styles ************ */
+.no-favorites {
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
 /****************** Responsive styles ************ */
 @media screen and (max-width: 800px) {
   body {
