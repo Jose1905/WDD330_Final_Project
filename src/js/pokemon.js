@@ -5,9 +5,6 @@ import {
   setLocalStorage,
 } from "./utils.mjs";
 
-loadHeaderFooter();
-
-const favoriteBtn = document.querySelector("#favorites-btn");
 const pokemonName = new URLSearchParams(window.location.search).get("name");
 
 if (pokemonName) {
@@ -15,20 +12,35 @@ if (pokemonName) {
 } else {
   loadPokemonData("pikachu"); // Default to Pikachu if no name is provided
 }
-favoriteBtn.addEventListener("click", toggleFavorite);
 
-function toggleFavorite() {
-  console.log("Toggling favorite for:", pokemonName); // Log the Pokémon name being toggled
+document.addEventListener('click', (e) => {
+  if (e.target.id === 'favorites-btn') {
+    toggleFavorite(e.target);}
+});
+
+function toggleFavorite(favoriteBtn) {
   const favorites = getLocalStorage("favorites") || [];
   if (favorites.includes(pokemonName)) {
     // Remove from favorites
     const updatedFavorites = favorites.filter((name) => name !== pokemonName);
     setLocalStorage("favorites", updatedFavorites);
-    favoriteBtn.textContent = "⭐";
   } else {
     // Add to favorites
     favorites.push(pokemonName);
     setLocalStorage("favorites", favorites);
+  }
+  updateFavoriteButton();
+}
+
+function updateFavoriteButton() {
+  const favorites = getLocalStorage("favorites") || [];
+  const favoriteBtn = document.getElementById("favorites-btn");
+  if (favorites.includes(pokemonName)) {
     favoriteBtn.textContent = "🌟";
+  } else {
+    favoriteBtn.textContent = "⭐";
   }
 }
+
+loadHeaderFooter();
+updateFavoriteButton();
