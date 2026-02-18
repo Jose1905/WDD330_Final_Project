@@ -46,11 +46,11 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement);
 }
 
-/* async function getCountryFlag() {
+async function getCountryFlag() {
   const res = await fetch("https://ipapi.co/json/");
   const data = await res.json();
   return data.country_code.toLowerCase();
-} */
+}
 
 export function loadPokemonCard(parentElement, pokemonName, pokemonImage) {
   const cardTemplate = `<div class="pokemon-card">
